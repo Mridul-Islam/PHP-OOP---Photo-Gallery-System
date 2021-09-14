@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Home - Start Bootstrap Template</title>
+    <title>Home Page - Photo Gallery System</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +30,3 @@
 
 
 
-    <!-- Navigation -->
-<?php include("navigation.php"); ?>
-
-    <!-- Page Content -->
-    <div class="container">
