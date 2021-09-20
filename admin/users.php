@@ -27,29 +27,51 @@
 
                         <?php
 
+                        
+
+                        //while($row = mysqli_fetch_assoc($all_user)) {
+                            //$user_id  = $all_user['id'];
+                            //$username = $all_user['username'];
+
+
+                           // echo "<a href='users.php?user_id={$all_user->id}'> {$all_user->username} </a> . <br>";
+                        //}
+
+
+                        //if(isset($_GET['user_id'])){
+                            //$user_id = $database->escape_string($_GET['user_id']);
+
+                            // $result = User::find_single_user(1);
+
+                            // $user = User::instantiation($result);
+                            
+                            // echo $user->id . "<br>";
+                            // echo $user->username . "<br>";
+                            // echo $user->password . "<br>";
+                            // echo $user->first_name . "<br>";
+                            // echo $user->last_name . "<br>";
+                            
+                        //}
                         $all_user = User::find_all_user();
+                        foreach($all_user as $user){
+                            echo $user->id . "<br>";
+                            echo $user->username . "<br>";
 
-                        while($row = mysqli_fetch_assoc($all_user)) {
-                            $user_id  = $row['id'];
-                            $username = $row['username'];
-
-                            echo "<a href='users.php?user_id={$user_id}'> {$username} </a> . <br>";
                         }
 
 
-                        if(isset($_GET['user_id'])){
-                            $user_id = $database->escape_string($_GET['user_id']);
+                    $the_user = User::find_single_user(5);
 
-                            $result = User::find_single_user($user_id);
+                    foreach($the_user as $single_user){
+                        echo $single_user->first_name . "<br>";
+                        echo $single_user->id . "<br>";
+                        echo $single_user->last_name . "<br>";
+                        echo $single_user->password . "<br>";
+                    }
 
-                            while($row = mysqli_fetch_array($result)){
-                                echo $row['id'] . "<br>";
-                                echo $row['username'] . "<br>";
-                                echo $row['password'] . "<br>";
-                                echo $row['first_name'] . "<br>";
-                                echo $row['last_name'] . "<br>";
-                            }
-                        }
+                    
+
+
 
 
 
