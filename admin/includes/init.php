@@ -1,9 +1,10 @@
 <?php
 
-include("includes/functions.php");
-include("includes/new_config.php");
-include("includes/database.php");
-include("includes/user.php");
+require_once("includes/functions.php");
+require_once("includes/new_config.php");
+require_once("includes/database.php");
+require_once("includes/user.php");
+require_once("includes/session.php");
 
 
 
