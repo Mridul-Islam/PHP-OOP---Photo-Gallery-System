@@ -10,12 +10,36 @@
 
                         <?php
 
-                        $sql = "SELECT * FROM users";
-                        $all_users_query = $database->query($sql);
-                        
-                        $users_found = mysqli_fetch_assoc($all_users_query);
-                        
-                        echo $user_id = $users_found['id'];
+
+
+                        $user = User::find_user_by_id(1);
+                        // echo $user->id;
+                        // echo $user->username;
+                        // echo $user->first_name . "<br>";
+
+                        echo $session->is_signed_in() . "<br>";
+
+                        //$session->login($user);
+
+                        //$session->logout();
+
+                        // $create = new User();
+
+                        // $create->username   = "Shamim Khan";
+                        // $create->password   = "12345";
+                        // $create->first_name = "Shamim";
+                        // $create->last_name  = "Hossain";
+                        //$create->create_user();
+
+                        // $user = User::find_user_by_id(6);
+
+                        // $user->last_name = "Khan";
+
+                        // $user->update_user();
+
+                        // $user = User::find_user_by_id(10);
+                        // $user->delete_user();
+
 
 
                         ?>

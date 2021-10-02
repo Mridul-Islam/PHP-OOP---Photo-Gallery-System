@@ -2,7 +2,7 @@
 
 require_once("new_config.php");
 
-class Database{
+class Database {
 
 	public $connection;
 
@@ -45,16 +45,13 @@ class Database{
 	}
 
 
-	public function the_insert_id(){
-		// mysqli_insert_id() is a function get the id generated in the last query
-		
-		//retrun mysqli_insert_id($this->connection);
-		//retrun $this->connection->insert_id;
+	public function the_insert_id() {
+		return mysqli_insert_id($this->connection);
 	}
 
 
 
-}
+} // End of the class
 
 
 

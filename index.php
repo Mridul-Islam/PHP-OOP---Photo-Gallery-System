@@ -1,5 +1,5 @@
 <?php include("includes/header.php"); ?>
-    
+<?php require_once("admin/includes/session.php"); ?>
 
     <!-- Navigation -->
     <?php include("includes/navigation.php"); ?>
@@ -11,6 +11,7 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
+
 
             </div>
 

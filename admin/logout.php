@@ -2,7 +2,7 @@
 
 <?php
 
-$session->log_out();
+$session->logout();
 redirect("login.php");
 
 
