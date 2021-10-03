@@ -2,6 +2,7 @@
 
 class User{
 
+	protected static $db_table = "users";
 	public $id;
 	public $username;
 	public $password;
@@ -58,15 +59,22 @@ class User{
 		return !empty($the_result_array)? array_shift($the_result_array) : false;
 	}
 
+
+	protected function properties() {
+		return get_object_vars($this);
+	}
+
+
 	public function create_user() {
 		global $database;
+		$properties = $this->properties();
 
-		$sql = "INSERT INTO users (username, password, first_name, last_name) ";
-		$sql .= "VALUES ('";
-		$sql .= $database->escape_string($this->username) . " ', ' ";
-		$sql .= $database->escape_string($this->password) . " ', ' ";
-		$sql .= $database->escape_string($this->first_name) . " ', ' ";
-		$sql .= $database->escape_string($this->last_name) . " ') ";
+		$sql = "INSERT INTO " . self::$db_table . "(" . implode(",", array_keys($properties)) . ") ";
+		$sql .= "VALUES ('" . implode("','", array_values($properties)) . "')";
+		// $sql .= $database->escape_string($this->username) . " ', ' ";
+		// $sql .= $database->escape_string($this->password) . " ', ' ";
+		// $sql .= $database->escape_string($this->first_name) . " ', ' ";
+		// $sql .= $database->escape_string($this->last_name) . " ') ";
 
 		if($database->query($sql)){
 			$this->id = $database->the_insert_id();
@@ -78,11 +86,12 @@ class User{
 		
 	}
 
+
 	public function update_user() {
 		global $database;
 
-		$sql = "UPDATE users SET ";
-		$sql .= "username= '" . $database->escape_string($this->username) ."', "; 
+		$sql = "UPDATE " . self::$db_table . " SET ";
+		$sql .= "username = '" . $database->escape_string($this->username) ."', "; 
 		$sql .= "password = '" . $database->escape_string($this->password) ."', "; 
 		$sql .= "first_name = '" . $database->escape_string($this->first_name) ."', "; 
 		$sql .= "last_name = '" . $database->escape_string($this->last_name) ."' "; 
@@ -92,10 +101,16 @@ class User{
 		return (mysqli_affected_rows($database->connection) == 1)? true : false;
 	}
 
+
+	public function save() {
+		return isset($this->id) ? $this->update_user() : $this->create_user();
+	}
+
+
 	public function delete_user() {
 		global $database;
 
-		$sql = "DELETE FROM users WHERE id = " . $database->escape_string($this->id);
+		$sql = "DELETE FROM " . self::$db_table . " WHERE id = " . $database->escape_string($this->id);
 		$sql .= " LIMIT 1";
 		$database->query($sql);
 
