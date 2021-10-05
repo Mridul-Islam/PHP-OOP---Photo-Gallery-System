@@ -41,19 +41,16 @@
                         // $user->delete_user();
 
 
-                        $user = new User();
-                        $user->username   = "Biplob";
-                        $user->password   = "12345";
-                        $user->first_name = "Biplob";
-                        $user->last_name  = "khan";
-                        $user->save();
-
-
-                        //$user = User::find_user_by_id(12);
-                        // $user->user_username = "Showrab A";
+                        // $user = new User();
+                        // $user->username   = "Shawon";
                         // $user->password   = "12345";
-                        // $user->first_name = "Showrab";
-                        // $user->last_name  = "Ahmed";
+                        // $user->first_name = "Shawon";
+                        // $user->last_name  = "Kahn";
+                        // $user->save();
+
+
+                        // $user = User::find_user_by_id(20);
+                        // $user->username = "Shihab";
                         // $user->save();
 
 
