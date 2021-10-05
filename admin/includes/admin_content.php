@@ -10,53 +10,44 @@
 
                         <?php
 
+                        $photos = Photo::find_all();
+
+                        foreach ($photos as $photo) {
+                            echo $photo->title . "<br>";
+                            echo $photo->description . "<br>";
+                            echo $photo->filename . "<br>";
+                            echo $photo->type . "<br>";
+                            echo $photo->size . "<br>";
+                            echo "<br>";
+                        }
+
+                        
+
+                        // $photo = new Photo();
+                        // $photo->title = "The bird";
+                        // $photo->description = "Bird is very beautiful";
+                        // $photo->filename = "Bird Book";
+                        // $photo->type = "png";
+                        // $photo->size = "1.2 MB";
+                        // $photo->save();
 
 
-                        // $user = User::find_user_by_id(1);
-                        // echo $user->id;
-                        // echo $user->username;
-                        // echo $user->first_name . "<br>";
-
-                        echo $session->is_signed_in() . "<br>";
-
-                        //$session->login($user);
-
-                        //$session->logout();
-
-                        // $create = new User();
-
-                        // $create->username   = "Shamim Khan";
-                        // $create->password   = "12345";
-                        // $create->first_name = "Shamim";
-                        // $create->last_name  = "Hossain";
-                        //$create->create_user();
-
-                        // $user = User::find_user_by_id(6);
-
-                        // $user->last_name = "Khan";
-
-                        // $user->update_user();
-
-                        // $user = User::find_user_by_id(10);
-                        // $user->delete_user();
 
 
-                        // $user = new User();
-                        // $user->username   = "Shawon";
-                        // $user->password   = "12345";
-                        // $user->first_name = "Shawon";
-                        // $user->last_name  = "Kahn";
-                        // $user->save();
+                        // $photo = Photo::find_by_id(1);
+                        // $photo->size = "5 MB";
+                        // $photo->save();
 
 
-                        // $user = User::find_user_by_id(20);
-                        // $user->username = "Shihab";
-                        // $user->save();
 
 
-                        // $user = User::find_user_by_id(12);
-                        // echo $user->username;
-                        // echo $user->password;
+
+                        // $photo = Photo::find_by_id(1);
+                        // $photo->delete();
+
+
+
+
 
 
 
