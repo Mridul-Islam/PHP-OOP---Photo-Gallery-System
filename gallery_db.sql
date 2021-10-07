@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2021 at 03:40 PM
+-- Generation Time: Oct 07, 2021 at 08:04 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -41,7 +41,9 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `title`, `description`, `filename`, `type`, `size`) VALUES
-(2, 'The bird', 'Bird is very beautiful', 'Bird Book', 'png', 1);
+(5, 'Black rolls-royce', '', 'black rolls-royce.jpg', 'image/jpeg', 7724),
+(6, 'Black audi', '', 'Black audi.jpg', 'image/jpeg', 8840),
+(7, 'Blue audi', '', 'blue audi.jpg', 'image/jpeg', 12793);
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
