@@ -42,7 +42,7 @@
 
 
 
-                        // $photo = Photo::find_by_id(1);
+                        // $photo = Photo::find_by_id(9);
                         // $photo->delete();
 
 

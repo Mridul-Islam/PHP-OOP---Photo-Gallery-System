@@ -36,7 +36,7 @@ $all_photo = Photo::find_all();
                         </h1>
                         
                         <div class="col-md-12">
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>Photo</th>
@@ -50,7 +50,13 @@ $all_photo = Photo::find_all();
                                 <?php foreach($all_photo as $photo){  ?>
 
                                 <tr>
-                                    <td class='col-md-4 col-sm-4 col-xs-4 col-lg-4'><img class='col-md-12 col-sm-12 col-xs-12 col-lg-12' src='<?php echo $photo->picture_path(); ?>' alt='' /></td>
+                                    <td class='col-md-4 col-sm-4 col-xs-4 col-lg-4'><img class='col-md-10 col-sm-10 col-xs-10 col-lg-10' src='<?php echo $photo->picture_path(); ?>' alt='' />
+                                        <div class="pictures_link">
+                                            <a class='btn' href="delete_photo.php?delete_id=<?php echo $photo->id; ?>">Delete</a>
+                                            <a class='btn' href="">Edit</a>
+                                            <a class='btn' href="">View</a>
+                                        </div>
+                                    </td>
                                     <td><?php echo $photo->id; ?></td>
                                     <td><?php echo $photo->filename; ?></td>
                                     <td><?php echo $photo->title; ?></td>
