@@ -1,5 +1,15 @@
 <?php include("includes/admin_header.php"); ?>
 
+<?php if(!$session->is_signed_in()) { redirect("login.php");  }          ?>
+
+<?php 
+
+$all_photo = Photo::find_all();  
+
+
+?>
+
+
         <!-- Navigation -->
             
             <?php include("includes/admin_top_nav.php"); ?>
@@ -24,14 +34,41 @@
                             Photos
                             <small>Subheading</small>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        
+                        <div class="col-md-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Photo</th>
+                                        <th>Id</th>
+                                        <th>File Name</th>
+                                        <th>Tittle</th>
+                                        <th>Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach($all_photo as $photo){  ?>
+
+                                <tr>
+                                    <td class='col-md-4 col-sm-4 col-xs-4 col-lg-4'><img class='col-md-12 col-sm-12 col-xs-12 col-lg-12' src='<?php echo $photo->picture_path(); ?>' alt='' /></td>
+                                    <td><?php echo $photo->id; ?></td>
+                                    <td><?php echo $photo->filename; ?></td>
+                                    <td><?php echo $photo->title; ?></td>
+                                    <td><?php echo $photo->size; ?></td>
+                                </tr>
+                                
+                                <?php 
+                                } 
+
+                                ?>
+
+
+                                
+                                </tbody>
+                            </table>
+                        </div>
+
+
                     </div>
                 </div>
                 <!-- /.row -->

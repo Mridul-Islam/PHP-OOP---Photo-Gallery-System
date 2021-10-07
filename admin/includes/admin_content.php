@@ -10,16 +10,16 @@
 
                         <?php
 
-                        $photos = Photo::find_all();
+                        // $photos = Photo::find_all();
 
-                        foreach ($photos as $photo) {
-                            echo $photo->title . "<br>";
-                            echo $photo->description . "<br>";
-                            echo $photo->filename . "<br>";
-                            echo $photo->type . "<br>";
-                            echo $photo->size . "<br>";
-                            echo "<br>";
-                        }
+                        // foreach ($photos as $photo) {
+                        //     echo $photo->title . "<br>";
+                        //     echo $photo->description . "<br>";
+                        //     echo $photo->filename . "<br>";
+                        //     echo $photo->type . "<br>";
+                        //     echo $photo->size . "<br>";
+                        //     echo "<br>";
+                        // }
 
                         
 
@@ -44,6 +44,11 @@
 
                         // $photo = Photo::find_by_id(1);
                         // $photo->delete();
+
+
+                        //echo DS . "<br>";
+                        echo SITE_ROOT . "<br>";
+                        //echo INCLUDES_PATH;
 
 
 

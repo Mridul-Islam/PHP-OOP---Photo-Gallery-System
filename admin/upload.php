@@ -1,5 +1,33 @@
 <?php include("includes/admin_header.php"); ?>
 
+<?php
+
+if(!$session->is_signed_in()){
+    redirect("login.php");
+}
+
+
+$message = "";
+// form submission
+if(isset($_POST['submit'])){
+    $photo = new Photo();
+
+    $photo->title = $_POST['title'];
+    $photo->set_file($_FILES['file_upload']);
+
+    if($photo->save()){
+        $message = "Photo Uploaded successfully";
+    }
+    else{
+        $message = join("<br>", $photo->errors);
+    }
+}
+
+
+
+
+?>
+
         <!-- Navigation -->
             
             <?php include("includes/admin_top_nav.php"); ?>
@@ -24,14 +52,27 @@
                             Upload
                             <small>Subheading</small>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        <?php
+
+                        echo $message;
+
+                        ?>
+
+                        <div class="col-md-10">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Image file</label>
+                                    <input type="file" name="file_upload" class="form-control">
+                                </div>
+                                <input type="submit" name="submit" class="btn btn-primary">
+                            </form>
+                        </div>
+
+
                     </div>
                 </div>
                 <!-- /.row -->

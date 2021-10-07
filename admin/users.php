@@ -38,19 +38,6 @@
 
 
 
-
-
-                        $user = User::find_user_by_id(1);
-
-                        echo $user->id . "<br>";
-                        echo $user->username . "<br>";
-                        echo $user->password . "<br>";
-                        echo $user->first_name . "<br>";
-                        echo $user->last_name . "<br>";
-
-
-
-
                         ?>
 
                         <ol class="breadcrumb">
