@@ -1,5 +1,15 @@
 <?php include("includes/admin_header.php"); ?>
 
+<?php if(!$session->is_signed_in()) { redirect("login.php"); }     ?>
+
+<?php  
+
+$users = User::find_all();
+
+
+
+?>
+
         <!-- Navigation -->
             
             <?php include("includes/admin_top_nav.php"); ?>
@@ -22,32 +32,49 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Users
-                            <small>Subheading</small>
+                            <small>Information</small>
                         </h1>
 
-                        <?php
+                        <a href="add_user.php" class="btn btn-primary btn-lg">Add User</a>
+                        <hr />
+
+                        <div class="col-md-12">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Photo</th>
+                                        <th>Username</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach($users as $user){  ?>
+
+                                <tr>
+                                    <td><?php echo $user->id; ?></td>
+                                    <td><img style="width: 180px; height: 100px;" class="admin_user_thumbnail" src='<?php echo $user->image_path_and_placeholder(); ?>' alt='' /></td>
+                                    <td><?php echo $user->username; ?></td>
+                                    <td><?php echo $user->first_name; ?></td>
+                                    <td><?php echo $user->last_name; ?></td>
+                                    <td><a href="edit_user.php?edit_u_id=<?php echo $user->id; ?>" class="btn btn-primary">Edit</a></td>
+                                    <td><a href="delete_user.php?u_id=<?php echo $user->id;?>" class="btn btn-danger">Delete</a></td>
+                                </tr>
+                                
+                                <?php 
+                                } 
+
+                                ?>
 
 
-                        // $users_found = User::find_all_users();
+                                
+                                </tbody>
+                            </table>
+                        </div>
 
-                        // foreach($users_found as $user){
-                        //     echo $user->id . "<br>";
-                        //     echo $user->first_name . "<br>";
-                        //     echo $user->last_name . "<br>";
-                        // }
-
-
-
-                        ?>
-
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
                     </div>
                 </div>
                 <!-- /.row -->
