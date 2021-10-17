@@ -4,7 +4,17 @@
 
 <?php  
 
-$comments = Comment::find_all();
+if(empty($_GET['id'])){
+    redirect("photos.php");
+}
+
+if(isset($_GET['id'])){
+    $photo_id = $_GET['id'];
+}
+
+$photo = Photo::find_by_id($photo_id);
+
+$photo_comments = Comment::find_the_comments($photo_id);
 
 
 
@@ -31,27 +41,28 @@ $comments = Comment::find_all();
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            All Comments
+
+                            <?php echo $photo->title;    ?>
+                            
+                            <small>Comments</small>
                         </h1>
                         <div class="col-md-12">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Photo ID</th>
                                         <th>Author</th>
                                         <th>Body</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach($comments as $comment){  ?>
+                                <?php foreach($photo_comments as $photo_comment){  ?>
 
                                 <tr>
-                                    <td><?php echo $comment->id; ?></td>
-                                    <td><?php echo $comment->photo_id; ?></td>
-                                    <td><?php echo $comment->author; ?></td>
-                                    <td><?php echo $comment->body; ?></td>
-                                    <td><a href="delete_comment.php?id=<?php echo $comment->id;?>" class="btn btn-danger">Delete</a></td>
+                                    <td><?php echo $photo_comment->id; ?></td>
+                                    <td><?php echo $photo_comment->author; ?></td>
+                                    <td><?php echo $photo_comment->body; ?></td>
+                                    <td><a href="delete_photo_comment.php?id=<?php echo $photo_comment->id;?>" class="btn btn-danger">Delete</a></td>
                                 </tr>
                                 
                                 <?php 

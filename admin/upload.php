@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
                                     <input type="text" name="title" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Image file</label>
+                                    <label>Image</label>
                                     <input type="file" name="file_upload" class="form-control">
                                 </div>
                                 <input type="submit" name="submit" class="btn btn-primary">

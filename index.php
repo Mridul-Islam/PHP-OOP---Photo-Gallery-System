@@ -2,7 +2,7 @@
 <?php require_once("admin/includes/session.php"); ?>
 
     <!-- Navigation -->
-    <?php include("includes/navigation.php"); ?>
+    <?php include("includes/navigation.php"); ?> 
 
     <!-- Page Content -->
     <div class="container">

@@ -31,8 +31,7 @@ $all_photo = Photo::find_all();
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Photos
-                            <small>Subheading</small>
+                            All Photos
                         </h1>
                         
                         <div class="col-md-12">
@@ -44,6 +43,7 @@ $all_photo = Photo::find_all();
                                         <th>File Name</th>
                                         <th>Tittle</th>
                                         <th>Size</th>
+                                        <th>Comments</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,16 +51,27 @@ $all_photo = Photo::find_all();
 
                                 <tr>
                                     <td><img class="admin_photo_thumbnail" src='<?php echo $photo->picture_path(); ?>' alt='' />
-                                        <div class="pictures_link">
+                                        <div class="action_link">
                                             <a class='btn' href="delete_photo.php?delete_id=<?php echo $photo->id; ?>">Delete</a>
                                             <a class='btn' href="edit_photo.php?edit_id=<?php echo $photo->id; ?>">Edit</a>
-                                            <a class='btn' href="">View</a>
+                                            <a class='btn' href="../photo.php?id=<?php echo $photo->id; ?>">View</a>
                                         </div>
                                     </td>
                                     <td><?php echo $photo->id; ?></td>
                                     <td><?php echo $photo->filename; ?></td>
                                     <td><?php echo $photo->title; ?></td>
                                     <td><?php echo $photo->size; ?></td>
+                                    <td>
+                                        <a href="comment_photo.php?id=<?php echo $photo->id; ?>">
+                                        <?php 
+
+                                        $photo_comments = Comment::find_the_comments($photo->id);
+                                        echo count($photo_comments);
+
+                                        ?>  
+                                        </a>
+                                        
+                                    </td>
                                 </tr>
                                 
                                 <?php 

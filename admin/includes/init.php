@@ -6,13 +6,14 @@ define('SITE_ROOT', 'C:' . DS . 'xampp' . DS . 'htdocs' . DS . 'Photo-Gallery-Sy
 
 defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT . DS . 'admin' . DS . 'includes');
 
-require_once("includes/functions.php");
-require_once("includes/new_config.php");
-require_once("includes/database.php");
-require_once("includes/user.php");
-require_once("includes/session.php");
-require_once("includes/db_object.php");
-require_once("includes/photo.php");
+require_once(INCLUDES_PATH . DS . "functions.php");
+require_once(INCLUDES_PATH . DS . "new_config.php");
+require_once(INCLUDES_PATH . DS . "database.php");
+require_once(INCLUDES_PATH . DS . "user.php");
+require_once(INCLUDES_PATH . DS . "session.php");
+require_once(INCLUDES_PATH . DS . "db_object.php");
+require_once(INCLUDES_PATH . DS . "photo.php");
+require_once(INCLUDES_PATH . DS . "comment.php");
 
 
 
