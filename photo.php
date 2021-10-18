@@ -1,16 +1,12 @@
 <?php include("includes/header.php"); ?>
-<?php require_once("admin/includes/init.php");
-
-?>
-
 
 <?php
 
-if(empty($_GET['photo_id'])){
+if(empty($_GET['id'])){
     redirect("index.php");
 }
 
-$photo = Photo::find_by_id($_GET['photo_id']);
+$photo = Photo::find_by_id($_GET['id']);
 
 
 if(isset($_POST['create_comment'])){
@@ -20,7 +16,7 @@ if(isset($_POST['create_comment'])){
     $new_comment = Comment::create_comment($photo->id, $author, $body);
 
     if($new_comment && $new_comment->save()){
-        redirect("photo.php?photo_id={$photo->id}");
+        redirect("photo.php?id={$photo->id}");
     }
     else{
         $message = "There was some problems to saving";
@@ -40,9 +36,6 @@ $comments = Comment::find_the_comments($photo->id);
 ?>
 
 
-
-
-
     <!-- Navigation -->
     <?php include("includes/navigation.php"); ?>
 
@@ -52,34 +45,29 @@ $comments = Comment::find_the_comments($photo->id);
         <div class="row">
 
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
 
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1>Blog Post Title</h1>
-
-                <!-- Author -->
-                <p class="lead">
-                    by <a href="#">Start Bootstrap</a>
-                </p>
+                <h1 class="text-center"><?php echo $photo->title; ?></h1>
 
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+                <!-- <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p> -->
 
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive thumbnail" src="admin/<?php echo $photo->picture_path(); ?>" alt="">
 
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">Lorem ipsum excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
+                <p class="lead"><?php echo $photo->caption; ?></p>
+
+                <p><?php echo $photo->description; ?></p>
 
                 <hr>
 
@@ -123,14 +111,15 @@ $comments = Comment::find_the_comments($photo->id);
 
             </div>
 
-            <!-- Blog Sidebar Widgets Column -->
-            
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-            
-                 <?php include("includes/sidebar.php"); ?>
 
-            </div>
+            <!-- Blog Sidebar Widgets Column -->
+            
+            <!-- Blog Sidebar Widgets Column -->
+            <!-- <div class="col-md-4"> -->
+            
+                 <?php //include("includes/sidebar.php"); ?>
+
+        </div>
         <!-- /.row -->
 
 <?php include("includes/footer.php"); ?>

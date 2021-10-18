@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2021 at 11:18 AM
+-- Generation Time: Oct 18, 2021 at 10:10 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -34,6 +34,15 @@ CREATE TABLE `comments` (
   `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `photo_id`, `author`, `body`) VALUES
+(15, 15, 'Arfan', 'This is good'),
+(16, 17, 'Shohan', 'This blue audi is rock..'),
+(17, 21, 'Showrab', 'This is very large image...');
+
 -- --------------------------------------------------------
 
 --
@@ -56,11 +65,12 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `title`, `caption`, `description`, `filename`, `alternate_text`, `type`, `size`) VALUES
-(15, 'Black Rolls-royce', '', '', 'black rolls-royce.jpg', '', 'image/jpeg', 7724),
+(15, 'Black Rolls-royce', 'Awesome car New caption', '<p>This is one of the best car in the world..</p>', 'black rolls-royce.jpg', '', 'image/jpeg', 7724),
 (17, 'Blue Audi', '', '', 'blue audi.jpg', '', 'image/jpeg', 12793),
 (18, 'Red Audi', '', '', 'red audi.jpg', '', 'image/jpeg', 189892),
 (19, 'White Rolls-Royce', '', '', 'white rolls-royce.jpg', '', 'image/jpeg', 5796),
-(20, 'White Audi', '', '', 'white_audi.jpg', '', 'image/jpeg', 10997);
+(20, 'White Audi', '', '', 'white_audi.jpg', '', 'image/jpeg', 10997),
+(21, 'large photo', '', '', '_large_image_3.jpg', '', 'image/jpeg', 165053);
 
 -- --------------------------------------------------------
 
@@ -115,13 +125,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
