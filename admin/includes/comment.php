@@ -35,6 +35,17 @@ class Comment extends Db_object {
 	}
 
 
+	public static function delete_photo_comment($photo_id) {
+		global $database;
+
+		$sql = "DELETE FROM " . self::$db_table . "WHERE photo_id = " . $database->escape_string($photo_id);
+		
+		$result = $database->query($sql);
+
+		return (mysqli_affected_rows($database->connection) == 1)? true : false;
+	}
+
+
 
 
 } // End of class

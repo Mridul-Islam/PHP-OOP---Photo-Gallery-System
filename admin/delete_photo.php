@@ -16,7 +16,7 @@ $photo = Photo::find_by_id($photo_id);
 
 if($photo){
     $photo->delete_photo();
-    redirect("photos.php");
+    redirect("photos.php");    
 }
 else{
     redirect("photos.php");

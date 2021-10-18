@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2021 at 04:38 AM
+-- Generation Time: Oct 18, 2021 at 11:18 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -34,15 +34,6 @@ CREATE TABLE `comments` (
   `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `photo_id`, `author`, `body`) VALUES
-(10, 7, 'Srijon', 'This is awesome..'),
-(11, 12, 'Shad', 'This photo is just like ..'),
-(12, 14, 'Showrab', 'How did you took that photo?');
-
 -- --------------------------------------------------------
 
 --
@@ -65,9 +56,11 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `title`, `caption`, `description`, `filename`, `alternate_text`, `type`, `size`) VALUES
-(7, 'Blue audi', 'Awesome car New caption', '<p><em><strong>Updated description..</strong></em></p>', 'blue audi.jpg', 'Gorgious car.', 'image/jpeg', 12793),
-(12, 'White rolls-royce', '', '', 'white rolls-royce.jpg', '', 'image/jpeg', 5796),
-(14, 'Black audi', '', '', 'Black audi.jpg', '', 'image/jpeg', 8840);
+(15, 'Black Rolls-royce', '', '', 'black rolls-royce.jpg', '', 'image/jpeg', 7724),
+(17, 'Blue Audi', '', '', 'blue audi.jpg', '', 'image/jpeg', 12793),
+(18, 'Red Audi', '', '', 'red audi.jpg', '', 'image/jpeg', 189892),
+(19, 'White Rolls-Royce', '', '', 'white rolls-royce.jpg', '', 'image/jpeg', 5796),
+(20, 'White Audi', '', '', 'white_audi.jpg', '', 'image/jpeg', 10997);
 
 -- --------------------------------------------------------
 
@@ -122,13 +115,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
