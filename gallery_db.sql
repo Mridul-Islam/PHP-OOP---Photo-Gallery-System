@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2021 at 08:28 AM
+-- Generation Time: Oct 25, 2021 at 09:35 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -101,8 +101,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `user_image`) VALUES
-(1, 'Mridul Islam', 'mridul', 'Mridul', 'Islam', 'blue audi.jpg'),
-(22, 'Omar Faruk', '12345', 'Omar', 'Faruk', 'white rolls-royce.jpg');
+(1, 'Mridul islam', 'mridul', 'Mridul ', 'Islam', 'IMG_1545.JPG'),
+(34, 'Shamim Mridha', '12345', 'Shamim', 'Hossain', 'IMG_0950.JPG'),
+(36, 'Azizul Haq', '12345', 'Azizul', 'Haq', 'IMG_1222.JPG'),
+(37, 'Showrab Ahmed', '12345', 'Showrab', 'Ahmed', 'IMG_1522.JPG'),
+(38, 'Shad', '12345', 'Shad', 'Khan', 'IMG_0802.JPG'),
+(39, 'Shakil Khan', '12345', 'Shakil', 'Khan', 'IMG_1462.JPG'),
+(40, 'Mahadi Hasan', '12345', 'Mahadi', ' Hasan', 'IMG_1217.JPG'),
+(41, 'Biplob', '12345', 'Biplob', 'Khan', 'IMG_0398.JPG');
 
 --
 -- Indexes for dumped tables
@@ -146,7 +152,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

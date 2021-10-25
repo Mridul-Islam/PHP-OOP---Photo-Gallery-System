@@ -34,6 +34,7 @@ $users = User::find_all();
                             All
                             <small>Users</small>
                         </h1>
+                        <p class="bg-success"><?php echo $session->message(); ?></p>
 
                         <a href="add_user.php" class="btn btn-primary btn-lg">Add User</a>
                         <hr />
@@ -60,8 +61,8 @@ $users = User::find_all();
                                     <td><?php echo $user->username; ?></td>
                                     <td><?php echo $user->first_name; ?></td>
                                     <td><?php echo $user->last_name; ?></td>
-                                    <td><a href="edit_user.php?edit_u_id=<?php echo $user->id; ?>" class="btn btn-primary">Edit</a></td>
-                                    <td><a href="delete_user.php?u_id=<?php echo $user->id;?>" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="edit_user.php?id=<?php echo $user->id; ?>" class="btn btn-primary">Edit</a></td>
+                                    <td><a href="delete_user.php?id=<?php echo $user->id;?>" class="btn btn-danger">Delete</a></td>
                                 </tr>
                                 
                                 <?php 

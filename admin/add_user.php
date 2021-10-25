@@ -18,6 +18,9 @@ if(isset($_POST['add_user'])){
 
         $user->upload_image();
         $user->save();
+
+        redirect("users.php");
+        $session->message("The -- {$user->username} -- user has been added");
     }
 }
 
@@ -49,7 +52,6 @@ if(isset($_POST['add_user'])){
                             Add
                             <small>User</small>
                         </h1>
-                        
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="form-group"> 
