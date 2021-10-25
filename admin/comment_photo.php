@@ -50,7 +50,8 @@ $photo_comments = Comment::find_the_comments($photo_id);
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
+                                        <th>Photo Id</th>
+                                        <th>Comment Id</th>
                                         <th>Author</th>
                                         <th>Body</th>
                                     </tr>
@@ -59,6 +60,7 @@ $photo_comments = Comment::find_the_comments($photo_id);
                                 <?php foreach($photo_comments as $photo_comment){  ?>
 
                                 <tr>
+                                    <td><?php echo $photo_comment->photo_id; ?></td>
                                     <td><?php echo $photo_comment->id; ?></td>
                                     <td><?php echo $photo_comment->author; ?></td>
                                     <td><?php echo $photo_comment->body; ?></td>

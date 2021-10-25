@@ -52,11 +52,13 @@ if(isset($_POST['submit'])){
                             Upload
                             <small>Photos</small>
                         </h1>
+                        <p class="text-center text-success">
                         <?php
 
                         echo $message;
 
                         ?>
+                        </p>
 
                         <div class="col-md-10">
                             <form action="" method="post" enctype="multipart/form-data">

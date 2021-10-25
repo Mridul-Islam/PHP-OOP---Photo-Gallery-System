@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2021 at 10:10 PM
+-- Generation Time: Oct 25, 2021 at 08:28 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -41,7 +41,9 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `photo_id`, `author`, `body`) VALUES
 (15, 15, 'Arfan', 'This is good'),
 (16, 17, 'Shohan', 'This blue audi is rock..'),
-(17, 21, 'Showrab', 'This is very large image...');
+(17, 21, 'Showrab', 'This is very large image...'),
+(18, 25, 'Mridul Islam', 'This is very nice car'),
+(19, 21, 'Shohan', 'This is a nice picture...');
 
 -- --------------------------------------------------------
 
@@ -70,7 +72,14 @@ INSERT INTO `photos` (`id`, `title`, `caption`, `description`, `filename`, `alte
 (18, 'Red Audi', '', '', 'red audi.jpg', '', 'image/jpeg', 189892),
 (19, 'White Rolls-Royce', '', '', 'white rolls-royce.jpg', '', 'image/jpeg', 5796),
 (20, 'White Audi', '', '', 'white_audi.jpg', '', 'image/jpeg', 10997),
-(21, 'large photo', '', '', '_large_image_3.jpg', '', 'image/jpeg', 165053);
+(21, 'large photo', '', '', '_large_image_3.jpg', '', 'image/jpeg', 165053),
+(22, 'Yellow Car', '', '', 'images-1 copy.jpg', '', 'image/jpeg', 28947),
+(23, 'Lighting Car', '', '', 'images-4.jpg', '', 'image/jpeg', 23270),
+(24, 'Accidental Car', '', '', 'images-15.jpg', '', 'image/jpeg', 28466),
+(25, 'Image 40', '', '', 'images-40 copy.jpg', '', 'image/jpeg', 24385),
+(26, 'Red Big Car', '', '', '_large_image_1.jpg', '', 'image/jpeg', 479843),
+(27, 'Image 16', '', '', 'images-16.jpg', '', 'image/jpeg', 21133),
+(28, 'Image 2', '', '', 'images_2.jpg', '', 'image/jpeg', 18578);
 
 -- --------------------------------------------------------
 
@@ -125,13 +134,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`

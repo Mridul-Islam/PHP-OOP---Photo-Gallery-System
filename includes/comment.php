@@ -25,24 +25,12 @@ class Comment extends Db_object {
 		}
 	}
 
-
 	public static function find_the_comments($photo_id=0) {
 		global $database;
 
 		$sql = "SELECT * FROM " . self::$db_table . " WHERE photo_id = " . $database->escape_string($photo_id) . " ORDER BY photo_id ASC";
 
 		return self::find_by_query($sql);
-	}
-
-
-	public static function delete_photo_comment($photo_id) {
-		global $database;
-
-		$sql = "DELETE FROM " . self::$db_table . "WHERE photo_id = " . $database->escape_string($photo_id);
-		
-		$result = $database->query($sql);
-
-		return (mysqli_affected_rows($database->connection) == 1)? true : false;
 	}
 
 

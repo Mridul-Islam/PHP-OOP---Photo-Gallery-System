@@ -2,3 +2,11 @@
 	width: 220px !important;
 	height: 150px !important;
 }
+
+
+
+/********* Home page pagination **********/
+.pager li .active_page{
+	background-color: black !important;
+	color: #FFFFFF;
+}
