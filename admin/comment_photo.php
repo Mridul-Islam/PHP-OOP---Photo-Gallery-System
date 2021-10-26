@@ -46,6 +46,7 @@ $photo_comments = Comment::find_the_comments($photo_id);
                             
                             <small>Comments</small>
                         </h1>
+                        <p class="bg-success text-center"><?php echo $message; ?></p>
                         <div class="col-md-12">
                             <table class="table table-hover">
                                 <thead>
@@ -64,7 +65,7 @@ $photo_comments = Comment::find_the_comments($photo_id);
                                     <td><?php echo $photo_comment->id; ?></td>
                                     <td><?php echo $photo_comment->author; ?></td>
                                     <td><?php echo $photo_comment->body; ?></td>
-                                    <td><a href="delete_photo_comment.php?id=<?php echo $photo_comment->id;?>" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="delete_photo_comment.php?id=<?php echo $photo_comment->id;?>" class="btn btn-danger delete_link">Delete</a></td>
                                 </tr>
                                 
                                 <?php 

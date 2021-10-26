@@ -90,3 +90,21 @@ padding: 10px;
   position: fixed !important;
 }
 
+
+
+/****** Custom style for dropzone *************/
+
+.dropzone {
+  border: 4px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+  margin-top: 20px;
+}
+
+
+/******* Log In form style *********/
+
+.log-in-form{
+  background-color: white;
+  height: 400px;
+}

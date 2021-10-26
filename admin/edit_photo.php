@@ -4,8 +4,8 @@
 
 <?php
 
-if(isset($_GET['edit_id'])){
-    $edit_id = $database->escape_string($_GET['edit_id']);
+if(isset($_GET['id'])){
+    $edit_id = $database->escape_string($_GET['id']);
 
     $photo = Photo::find_by_id($edit_id);
 
@@ -17,6 +17,8 @@ if(isset($_GET['edit_id'])){
             $photo->alternate_text = $_POST['alternate_text'];
             
             $photo->save();
+            redirect("edit_photo.php?id=$photo->id");
+            $session->message("The Photo -- {$photo->filename} -- has been updated");
         }
     }
 } 
@@ -54,7 +56,7 @@ else{
                             Edit
                             <small>Photo</small>
                         </h1>
-                        
+                        <p class="bg-success"><?php echo $message; ?></p>
                         <form action="" method="post">
                             <div class="col-md-8">
                                 <div class="form-group">

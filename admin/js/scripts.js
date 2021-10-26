@@ -7,6 +7,8 @@ $(document).ready(function(){
 	var image_name;
 	var photo_id;
 
+
+	// photo library modal work
 	$(".modal_thumbnails").click(function(){
 		$("#set_user_image").prop('disabled', false);
 
@@ -48,7 +50,23 @@ $(document).ready(function(){
 		});
 	});
 
-	
+
+	// Edit Photo sidebar
+	$(".info-box-header").click(function(){
+		alert("hello");
+		//$(".inside").slideToggle("fast");
+		//$("#toggle").toggleClass("glyphicon glyphicon-menu-down, glyphicon glyphicon-menu-up");
+	});
+
+
+
+	//delete confirmation event
+	$(".delete_link").click(function(){
+		return confirm("Are you sure you want to delete this");
+	});
+
+
+
 
 	tinymce.init({selector:'textarea'});
 });

@@ -34,6 +34,9 @@ $comments = Comment::find_all();
                             All 
                                 <small>Comments</small>
                         </h1>
+
+                        <p class="bg-success text-center"><?php echo $message; ?></p>
+
                         <div class="col-md-12">
                             <table class="table table-hover">
                                 <thead>
@@ -52,7 +55,7 @@ $comments = Comment::find_all();
                                     <td><?php echo $comment->photo_id; ?></td>
                                     <td><?php echo $comment->author; ?></td>
                                     <td><?php echo $comment->body; ?></td>
-                                    <td><a href="delete_comment.php?id=<?php echo $comment->id;?>" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="delete_comment.php?id=<?php echo $comment->id;?>" class="btn btn-danger delete_link">Delete</a></td>
                                 </tr>
                                 
                                 <?php 

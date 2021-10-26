@@ -17,6 +17,7 @@ if(isset($_POST['create_comment'])){
 
     if($new_comment && $new_comment->save()){
         redirect("photo.php?id={$photo->id}");
+        $session->message("The comment has been submitted");
     }
     else{
         $message = "There was some problems to saving";
@@ -70,6 +71,8 @@ $comments = Comment::find_the_comments($photo->id);
                 <p><?php echo $photo->description; ?></p>
 
                 <hr>
+
+                <p class="bg-success text-center"><?php echo $message; ?></p>
 
                 <!-- Blog Comments -->
 
