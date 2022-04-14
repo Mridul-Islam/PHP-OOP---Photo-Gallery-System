@@ -20,7 +20,7 @@ if(isset($_POST['login'])){
 		redirect("index.php");
 	}
 	else{
-		$the_message = "Your username or password are incorrect";
+		$the_message = "Your username and password didn't match";
 	}
 }
 else{

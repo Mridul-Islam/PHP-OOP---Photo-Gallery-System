@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2021 at 03:05 PM
+-- Generation Time: Apr 14, 2022 at 02:32 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -34,16 +34,6 @@ CREATE TABLE `comments` (
   `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `photo_id`, `author`, `body`) VALUES
-(18, 25, 'Mridul Islam', 'This is very nice car'),
-(20, 15, 'Shohan', 'Wow This is nice...'),
-(21, 15, 'Showrab', 'This is gorgious....'),
-(22, 15, 'Shad', 'How a person can do this...');
-
 -- --------------------------------------------------------
 
 --
@@ -66,21 +56,11 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `title`, `caption`, `description`, `filename`, `alternate_text`, `type`, `size`) VALUES
-(15, 'Black Rolls-royce', 'Awesome car New caption', '<p>This is one of the best car in the world..</p>', 'black rolls-royce.jpg', '', 'image/jpeg', 7724),
-(17, 'Blue Audi', '', '', 'blue audi.jpg', '', 'image/jpeg', 12793),
-(18, 'Red Audi', '', '', 'red audi.jpg', '', 'image/jpeg', 189892),
-(19, 'White Rolls-Royce', '', '', 'white rolls-royce.jpg', '', 'image/jpeg', 5796),
-(21, 'large photo', '', '', '_large_image_3.jpg', '', 'image/jpeg', 165053),
-(22, 'Yellow Car', '', '', 'images-1 copy.jpg', '', 'image/jpeg', 28947),
-(23, 'Lighting Car', '', '', 'images-4.jpg', '', 'image/jpeg', 23270),
-(24, 'Accidental Car 1', 'Awesome car New caption', '<p>This is accident car....</p>', 'images-15.jpg', '', 'image/jpeg', 28466),
-(25, 'Image 40', '', '', 'images-40 copy.jpg', '', 'image/jpeg', 24385),
-(29, '', '', '', 'IMG_0258.JPG', '', 'image/jpeg', 879794),
-(30, '', '', '', 'IMG_0267.JPG', '', 'image/jpeg', 1043869),
-(31, '', '', '', 'IMG_0282.JPG', '', 'image/jpeg', 921068),
-(32, '', '', '', 'IMG_0360.JPG', '', 'image/jpeg', 1159302),
-(33, '', '', '', 'IMG_0351.JPG', '', 'image/jpeg', 1595817),
-(34, '', '', '', 'IMG_0352.JPG', '', 'image/jpeg', 1581974);
+(1, '', '', '', 'Black audi.jpg', '', 'image/jpeg', 8840),
+(2, '', '', '', 'black rolls-royce.jpg', '', 'image/jpeg', 7724),
+(3, '', '', '', 'blue audi.jpg', '', 'image/jpeg', 12793),
+(4, '', '', '', 'blue rolls-royce.webp', '', 'image/webp', 44720),
+(5, '', '', '', 'camera.jpg', '', 'image/jpeg', 6060);
 
 -- --------------------------------------------------------
 
@@ -102,13 +82,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `user_image`) VALUES
-(1, 'Mridul islam', 'mridul', 'Mridul ', 'Islam', 'IMG_1545.JPG'),
-(36, 'Azizul Haq', '12345', 'Azizul', 'Haq', 'IMG_1222.JPG'),
-(37, 'Showrab Ahmed', '12345', 'Showrab', 'Ahmed', 'IMG_1522.JPG'),
-(38, 'Shad', '12345', 'Shad', 'Khan', 'IMG_0802.JPG'),
-(39, 'Shakil Khan', '12345', 'Shakil', 'Khan', 'IMG_1462.JPG'),
-(40, 'Mahadi Hasan', '12345', 'Mahadi', ' Hasan', 'IMG_1217.JPG'),
-(44, 'Omar Faruk', '12345', 'Omar', 'Faruk', 'IMG_0249.JPG');
+(1, 'Mridul Islam', '12345', 'Mridul ', 'Islam', 'IMG_1545.JPG');
 
 --
 -- Indexes for dumped tables
@@ -140,19 +114,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

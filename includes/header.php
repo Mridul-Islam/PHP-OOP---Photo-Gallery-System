@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+
 <?php require_once("includes/init.php"); ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
 
     <title>Home Page - Photo Gallery System</title>
 
-    <!-- Bootstrap Core CSS -->
+        <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
